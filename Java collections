@@ -1,0 +1,47 @@
+import java.util.*;  
+ public class ArrayList1{  
+ public static void main(String args[]){  
+ArrayList<String> list=new ArrayList<String>();
+ArrayList<String> list1=new ArrayList<String>();
+//Creating arraylist    
+      list.add("Ravi");//Adding object in arraylist    
+      list.add("Vijay");    
+      list.add("Ravi");    
+      list.add("Ajay");    
+      
+      list1.addAll(list);
+      
+      //Object a=555; 
+     
+      //Invoking arraylist object   
+      System.out.println("list:"+list);  
+      System.out.println("list1:"+list1);  
+      
+List<String> list2= new LinkedList<String>();
+   list2.addAll(list1);
+System.out.println("list2:"+list2.get(2));
+
+Set<String> set1= new HashSet<String>();
+    set1.addAll(list);
+System.out.println("Set:"+set1);
+
+Map<Integer, String> Map1 = new HashMap<Integer, String>();
+  
+  for(int i=0; i<4; i++){
+      Map1.put(i,list.get(i));
+  };
+  System.out.println("Map:"+Map1);
+  
+  for(Map.Entry m: Map1.entrySet())
+  {
+     // if (m.getKey()>2)
+  System.out.println("Key:  "+m.getKey()+ "    Value:  "+ m.getValue());
+  
+    // a= m.getKey();
+     //int b=Integer.valueOf(a)+5;
+     //m.put(b,"aaa");
+     
+    }
+
+   }  
+ }  
