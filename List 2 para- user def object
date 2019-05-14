@@ -1,0 +1,70 @@
+import java.util.*;  
+class myobject{
+int a,b;
+   myobject(int a, int b){
+    this.a=a;
+    this.b=b;
+    }
+}
+
+public class myjob{
+    
+public static void main(String[] args){
+    myobject m1= new myobject(1,1);
+    myobject m2= new myobject(2,2);
+    myobject m3= new myobject(3,3);
+    
+    List<myobject> list=new LinkedList<myobject>();
+    
+    list.add(m1);
+    list.add(m2);
+    list.add(m3);
+    
+    List<Integer> inl=  new LinkedList<Integer>();
+    inl.add(22);
+    inl.add(33);
+    inl.add(44);
+    inl.add(55);
+    inl.add(66);
+    inl.add(77);
+    
+    System.out.println("List:   "+ inl.get(0)+ "   Size:  " +inl.size());
+    int a1=inl.get(0);
+    int a2=inl.get(1);
+    
+    
+    // Adding list to user def object - list
+    for(int x=0; x<list.size(); x=x+2 )
+    {
+        myobject n1= new myobject(inl.get(x),inl.get(x+1));
+        list.add(n1);
+    }
+    
+    list.forEach(i->   {
+        if(i.a>4)
+        System.out.println(i.a +"   " +i.b*100) ; 
+        }
+        );
+    
+    
+    
+     System.out.println("-------------------------------------");
+    
+    //list.addAll(n1);
+      System.out.println("USING forEach LOOP");
+      list.forEach(i->   System.out.println(i.a +"   " +i.b)  );
+      
+          System.out.println("-------------------------------------");
+          System.out.println("USING WHILE LOOP");
+          
+    Iterator itr= list.iterator();
+    while (itr.hasNext())
+    {
+        myobject st= (myobject)itr.next();
+        System.out.println(st.a +"   " +st.b);
+        
+    }
+  
+    
+}
+}
